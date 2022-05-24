@@ -39,7 +39,7 @@ configPath = os.path.sep.join(["yolov4-custom.cfg"])
 
 net = cv2.dnn.readNetFromDarknet(configPath, weightsPath)
 ln = net.getLayerNames()
-ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
+ln = [ln[i - 1] for i in net.getUnconnectedOutLayers()]
 
 # initialize the video stream
 vs = cv2.VideoCapture("test.mp4")
